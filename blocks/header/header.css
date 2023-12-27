@@ -16,8 +16,7 @@ header .navbar-nav .dropdown-menu {
   border-radius: 0;
   margin-top: -5px;
 }
-header .bottom-navbar.navbar-nav .dropdown-menu li {
-}
+
 header .bottom-navbar.navbar-nav .nav-link.show{
   background: var(--color-primary) !important;
   color: white !important;
@@ -35,10 +34,10 @@ header ul.language-dropdown li.nav-item a.nav-link{
   font-weight: 600;
   color: var(--color-primary);
   text-align: left;
-  min-width: none;
+  min-width: 0;
 }
 header ul.language-dropdown li.nav-item ul.dropdown-menu {
-  min-width: none;
+  min-width: 0;
 }
 header ul.language-dropdown li.nav-item ul.dropdown-menu a.dropdown-item {
   font-weight: 600;

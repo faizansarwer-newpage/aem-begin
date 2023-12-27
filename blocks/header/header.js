@@ -188,30 +188,32 @@ function setNavBar(block, sectionList) {
   <div class="">
   <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container">
-      <div class="row w-100">
-     <div class="d-flex col-sm-12 col-lg-2 ">
-     <a class="navbar-brand" href="${sectionList["navbar-brand"].url}">${
-    sectionList["navbar-brand"].picture.innerHTML
-  }</a>
-     <button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-		
-     </div>
-			<div class="d-lg-none">
+      <div class="row w-100 p-0 m-0">
+			<div class="d-flex col-sm-12 col-lg-2 p-0">
+					<a class="navbar-brand" href="${sectionList["navbar-brand"].url}">
+						${sectionList["navbar-brand"].picture.innerHTML||""	}
+					</a>
+					<button class="ms-auto navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+			</div>
+			<div class="d-lg-none p-0">
 			<a class="nav-link p-0 m-0 text-primary fw-bold" href="${sectionList["navbar-top"][0].text}">${sectionList["navbar-top"][0].text} <i class="fa-solid fa-caret-right"></i><i class="fa-solid fa-caret-right"></i> </a>
 			</div>
       ${generateTopNavigation(sectionList["navbar-top"])}
       ${generateMainMenu(sectionList["navbar-main"])}
       </div>
+			
     </div>
+		
   </nav>
+	<div class="container border border-2 border-primary w-100 d-lg-none"></div>
   </div>`;
   block.innerHTML = header;
 }
 function generateTopNavigation(section) {
   return `
-  <div class="col-lg-10 collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="col-lg-10 p-0 collapse navbar-collapse" id="navbarSupportedContent">
       
   <ul class="language-dropdown navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-center">
     ${section
@@ -265,7 +267,7 @@ function generateMainMenu(menu) {
     .map((color) => color.trim());
 		console.log(borderColors);
   return `
-  <div class="col-lg-12 collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="col-lg-12 p-0 collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="bottom-navbar navbar-nav me-auto mb-2 mb-lg-0 d-flex w-100 text-center gap-1 justify-content-strech">
   ${menu
     .map(
