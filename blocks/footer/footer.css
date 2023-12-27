@@ -2,7 +2,7 @@ footer {
   padding: 2rem;
   background-color: var(--overlay-background-color);
   font-size: var(--body-font-size-s);
-  background-color: green;
+  background-color: none;
 }
 
 footer .footer {

@@ -402,11 +402,12 @@ function decorateIcon(span, prefix = '') {
   const iconName = Array.from(span.classList)
     .find((c) => c.startsWith('icon-'))
     .substring(5);
-  const img = document.createElement('img');
-  img.dataset.iconName = iconName;
-  img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
-  img.loading = 'lazy';
-  span.append(img);
+  // const img = document.createElement('img');
+  // img.dataset.iconName = iconName;
+  console.log('icon name', iconName);
+  // img.src = `${window.hlx.codeBasePath}${prefix}/icons/${iconName}.svg`;
+  // img.loading = 'lazy';
+  span.innerHTML = `<i class="fa ${iconName}"></i>`;
 }
 
 /**
